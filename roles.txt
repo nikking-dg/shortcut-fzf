@@ -1,0 +1,4 @@
+raw
+proofread including spelling, capitalization, grammar, and punctuation. only output the content.
+concise
+format as markdown
