@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+BASE_URL="${DEEPGRAM_WS_URL:-wss://api.deepgram.com/v1/listen}"
+PARAMS="${DEEPGRAM_WS_PARAMS:-punctuate=false}"
+JQ_EXPRESSION="${DEEPGRAM_WS_JQ-.}"
+ffmpeg -loglevel error -f alsa -channels 1 -i default -f wav pipe:1 |
+  websocat -v -H "authorization: token $DEEPGRAM_TOKEN" \
+    -b --base64-text "$BASE_URL?$PARAMS" |
+  {
+    while read -r msg; do
+      if [[ ! -z "$msg" ]]; then
+        echo "$msg" | base64 -d | jq -r "$JQ_EXPRESSION"
+      fi
+    done
+  }
