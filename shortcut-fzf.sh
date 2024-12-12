@@ -17,7 +17,6 @@ cat roles.txt | fzf -e \
   --bind "ctrl-e:execute(./edit.sh)+refresh-preview" \
   --bind "ctrl-r:refresh-preview" \
   --bind "tab:reload-sync(cat roles.txt <(echo {q}))" \
-  --bind "ctrl-w:execute-silent(./copy.sh {})" \
   --bind "enter:execute-silent(./copy.sh {n})+abort" \
   --preview-window=wrap,down
 
