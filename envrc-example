@@ -1,0 +1,8 @@
+export DEEPGRAM_TOKEN=<your_api_key>
+export DEEPGRAM_WS_URL="wss://api.deepgram.com/v1/listen"
+export DEEPGRAM_WS_PARAMS="model=nova-2&smart_format=true"
+export DEEPGRAM_WS_JQ=".channel.alternatives[0].transcript"
+export DEEPGRAM_MANAGE_URL="https://manage.deepgram.com/v1"
+export CLAUDE_API_KEY=<your_api_key>
+export OPENAI_API_KEY=<your_api_key>
+

@@ -7,5 +7,7 @@ pkgs.mkShell {
     bat
     websocat
     aichat
+    delta
+    ffmpeg_6-full
   ];
 }
